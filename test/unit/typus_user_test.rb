@@ -14,16 +14,14 @@ class TypusUserTest < ActiveSupport::TestCase
   end
 
   def test_should_verify_typus_user_attributes
-    %w( first_name last_name email role salt crypted_password ).each do |attribute|
-      # FIXME
-      # assert TypusUser.instance_methods.include?(attribute)
+    [ :first_name, :last_name, :email, :role, :salt, :crypted_password ].each do |attribute|
+      assert TypusUser.model_fields.include?(attribute)
     end
   end
 
   def test_should_verify_definition_on_instance_methods
-    %w( is_root? authenticated? ).each do |instance_method|
-      # FIXME
-      # assert TypusUser.instance_methods.include?(instance_method)
+    [ :is_root?, :authenticated? ].each do |instance_method|
+      assert TypusUser.instance_methods.include?(instance_method)
     end
   end
 
