@@ -1,5 +1,3 @@
-require 'ftools'
-
 module Typus
 
   def self.generator
